@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
 
+gem 'sidekiq', path: '../sidekiq'
+gem 'sinatra', require: false
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', path: '../rails', branch: '4-2-stable'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
