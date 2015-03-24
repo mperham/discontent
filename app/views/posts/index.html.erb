@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome to Discontent</h1>
+
+<p>The forum for terrible people!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Latest Posts</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
