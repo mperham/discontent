@@ -11,7 +11,7 @@ class FilterObscenityJob < ActiveJob::Base
 
   BLACKLIST = {
     'poop' => 'dookie',
-    'butt' => 'bottom',
+    'python' => 'ruby', # Zing!
   }
 
   def sanitize(str)
