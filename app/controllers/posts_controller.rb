@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    Post.delay.trim
+    #Post.delay.trim
   end
 
   # GET /posts/1
@@ -29,7 +29,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        FilterObscenityJob.perform_later(@post.id)
+
+        # inline
+        #FilterObscenity.new.perform(@post.id)
+        #
+        # background
+        #FilterObscenity.perform_later(@post.id)
+
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
