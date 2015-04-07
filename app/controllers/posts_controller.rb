@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    #Post.delay.trim
   end
 
   # GET /posts/1
@@ -34,7 +33,10 @@ class PostsController < ApplicationController
         #FilterObscenity.new.perform(@post.id)
         #
         # background
-        #FilterObscenity.perform_later(@post.id)
+        #FilterObscenityJob.perform_later(@post.id)
+        #
+        # native
+        #HelloWorker.perform_async("Mike")
 
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
